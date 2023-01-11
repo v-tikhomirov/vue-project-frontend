@@ -1,0 +1,69 @@
+.nav-list {
+  list-style: none;
+  padding: 0 0 0 28px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    min-height: 35px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 19px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 0;
+
+      display: none;
+
+      width: 7px;
+      height: 36px;
+      background-color: $color-default-white;
+      border-radius: 0px 5px 5px 0px;
+
+      @include vp-767 {
+        left: -21px;
+      }
+    }
+
+    &.is-active {
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 9px;
+
+    &--dashboard {
+      width: 20px;
+      height: 16px;
+    }
+
+    &--page {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--globe {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

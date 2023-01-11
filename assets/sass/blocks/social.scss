@@ -1,0 +1,36 @@
+.social {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 17px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    cursor: pointer;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 11px 12px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+
+  color: $color-dim-gray;
+  background-color: $color-default-white;
+
+  border-radius: 8px;
+  border: 1px solid $color-dim-gray;
+  user-select: none;
+  cursor: pointer;
+
+  transition: background-color $trans-default, color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $color-white-smoke;
+    }
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 7px 10px;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--long {
+    width: 100%;
+  }
+
+  &--fix-width {
+    width: 182px;
+  }
+
+  &--icon-left &__icon {
+    margin-right: 10px;
+    order: -1;
+
+
+    @include vp-767 {
+      margin-right: 6px;
+    }
+  }
+
+  &--icon-right &__icon {
+    margin-left: 10px;
+  }
+
+  &--blue {
+    border: none;
+    background-color: $color-neon-blue;
+    color: $color-default-white;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-free-speech-blue;
+      }
+    }
+  }
+
+  &--blue-text {
+    border: 1px solid $color-neon-blue;
+    background-color: $color-transparent;
+    color: $color-neon-blue;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        border: 1px solid $color-free-speech-blue;
+        color: $color-free-speech-blue;
+      }
+    }
+  }
+
+  &--only-icon {
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+
+    transition: color $trans-default, background-color none;
+
+    .btn__text {
+      display: none;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-silver3;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--white {
+    border-color: $color-default-white;
+    color: $color-default-white;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  &--textarea-toolbar {
+    align-items: flex-start;
+    width: auto;
+    min-width: 22px;
+    height: 22px;
+    padding: 4px 2px;
+    border-radius: 2px;
+
+    svg {
+      fill: #151515;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        background-color: #e8e8e8;
+      }
+    }
+  }
+
+  &--icon-top {
+    flex-direction: column-reverse;
+    border: none;
+
+    .btn__icon {
+      margin: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  &--card-no-border {
+    padding: 3px 0;
+    border: none;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 143%;
+    letter-spacing: 0.03em;
+    word-break: break-all;
+
+    .btn__icon {
+      margin-right: 6px;
+    }
+
+    svg {
+      fill: $color-dim-gray;
+    }
+  }
+
+  &--card-accented {
+    font-size: 12px;
+    color: $color-neon-blue;
+  }
+
+  &--card-dark {
+    font-size: 12px;
+    color: $color-night-rider;
+  }
+
+  &--card-light {
+    font-weight: 700;
+    font-size: 12px;
+    color: $color-silver3;
+
+    &:disabled {
+      opacity: 1;
+    }
+  }
+
+  &--to-the-left {
+    margin-right: auto;
+
+    @include vp-767 {
+      margin-right: auto;
+    }
+  }
+
+  &--border-none {
+    border: none;
+    padding: 0;
+    color: $color-silver3;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-dim-gray;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.buttons-panel {
+  display: flex;
+  justify-content: flex-end;
+
+  padding-top: 10px;
+  margin-top: auto;
+
+  @include vp-767 {
+    position: fixed;
+    width: 100vw;
+    flex: 1;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: $color-default-white;
+    box-shadow: 0 4px 24px rgba($color-default-black, 0.07);
+    z-index: 50;
+  }
+}

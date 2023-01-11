@@ -1,0 +1,225 @@
+.custom-toggle {
+  position: relative;
+
+  display: flex;
+  padding: 0 0 20px;
+  user-select: none;
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    color: $color-flamingo;
+
+    opacity: 0;
+
+    transition: opacity $trans-default;
+  }
+
+  input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+  }
+
+  label {
+    position: relative;
+
+    padding-left: 38px;
+
+    cursor: pointer;
+
+    span {
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+
+  &--checkbox {
+    .custom-toggle__icon {
+      position: absolute;
+      top: 2px;
+      left: 0;
+
+      width: 22px;
+      height: 22px;
+
+      &--checked {
+        opacity: 0;
+      }
+    }
+
+    input:checked ~ .custom-toggle__icon {
+      opacity: 0;
+
+      &--checked {
+        opacity: 1;
+      }
+    }
+
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &--radio {
+    label {
+      padding-left: 0;
+    }
+
+    .custom-toggle__label {
+      display: flex;
+      padding: 10px 15px;
+
+      color: $color-night-rider;
+      line-height: 19px;
+
+      border: 1px solid #bdbdbd;
+      border-radius: 54px;
+    }
+
+    input:checked ~ .custom-toggle__label {
+      color: $color-neon-blue;
+      border-color: $color-neon-blue;
+    }
+
+    .custom-toggle__icon {
+      position: absolute;
+      top: 2px;
+      left: 0;
+
+      display: none;
+      width: 16px;
+      height: 16px;
+
+      border: 1px solid rgba($color-default-black, 0.2);
+      border-radius: 50%;
+
+      transition: border $trans-default;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 6px;
+        height: 6px;
+
+        color: $color-transparent;
+
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+
+        transition: color $trans-default;
+      }
+    }
+  }
+
+  &--simple-radio {
+    .custom-toggle__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 20px;
+      height: 20px;
+
+      border: 2px solid $color-neon-blue;
+      border-radius: 50%;
+
+      transition: border $trans-default;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 10px;
+        height: 10px;
+
+        color: $color-neon-blue;
+
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+
+        transition: color $trans-default;
+      }
+    }
+
+    input:checked ~ .custom-toggle__icon::before {
+      background-color: $color-neon-blue;
+    }
+
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  &.is-invalid {
+    .custom-toggle__icon {
+      border: 1px solid $color-flamingo;
+    }
+
+    .custom-toggle__error {
+      opacity: 1;
+    }
+  }
+
+  /*&.is-valid {
+    label span {
+      color: $color-eucalyptus;
+    }
+  }*/
+
+  &__message {
+    position: absolute;
+    z-index: 1;
+    top: 51px;
+    display: none;
+
+    padding: 10px;
+    box-shadow: 0 4px 42px rgba($color-default-black, 0.07);
+    border-radius: 8px;
+    background-color: $color-default-white;
+    width: 176px;
+  }
+
+  &__message-text {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  transition: display $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover .custom-toggle__message,
+    &:focus .custom-toggle__message {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,355 @@
+.form {
+  max-width: 937px;
+  padding: 30px;
+  background: $color-default-white;
+  box-shadow: 0 4px 42px rgba($color-default-black, 0.07);
+  border-radius: 8px;
+  overflow: hidden;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @include vp-767 {
+    margin: 0;
+    padding: 16px;
+  }
+
+  &__block {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 525px;
+    gap: 30px;
+    padding: 44px 0 22px 0;
+    margin: 0;
+    border-top: 1px solid $color-gainsboro;
+
+    &:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 35px 0 15px;
+    }
+  }
+
+  &__description {
+    min-width: 180px;
+
+    .title {
+      margin-bottom: 9px;
+      display: inline;
+    }
+
+    @include vp-767 {
+      padding: 0 0 18px;
+
+      .title {
+        margin-bottom: 11px;
+      }
+
+      .form__text {
+        margin-bottom: 11px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 360px;
+    color: $color-dim-gray;
+
+    @include vp-767 {
+      max-width: none;
+      margin-top: 7px;
+    }
+  }
+
+  &__accent {
+    font-weight: 700;
+  }
+
+  &__select-btn {
+    margin-bottom: -15px;
+  }
+
+  &__btn-add {
+    position: relative;
+    padding: 0;
+    margin: 0 auto 20px 0;
+    font-weight: 600;
+
+    .btn__icon {
+      margin-right: 8px;
+    }
+  }
+
+  &__btn-delete-project {
+    position: absolute;
+    margin: 0 0 0 15px;
+    font-weight: 600;
+
+    .btn__icon {
+      margin-right: 5px;
+    }
+
+    @media (max-width: 1090px) {
+      position: static;
+      margin: 0;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+    margin: 64px 20px 0 34px;
+
+    @include vp-767 {
+      justify-content: flex-start;
+      margin: 0;
+    }
+  }
+
+  &__groop-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  &__checkbox {
+    label {
+      padding-left: 30px;
+    }
+
+    .custom-toggle__label {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__checkbox-buttons {
+    margin: 8px 0 19px;
+
+    @include vp-767 {
+      margin: 0 0 16px;
+      max-width: 280px;
+      line-height: 25px;
+    }
+
+    .custom-toggle {
+      padding: 0;
+      margin-bottom: 9px;
+    }
+
+    .custom-toggle--checkbox .custom-toggle__label {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &__radio-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4px 0 13px;
+
+    .custom-toggle {
+      &:not(:last-child) {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__additional {
+    position: relative;
+    margin-top: 24px;
+
+    .form__btn-close {
+      margin-left: -6px;
+      margin-top: -2px;
+
+      @include vp-767 {
+        margin-left: 3px;
+        margin-top: 0;
+      }
+    }
+
+    // .form__select-btn:last-of-type {
+    //   // margin-bottom: 0;
+    // }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    color: $color-dim-gray;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-silver;
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: auto;
+    position: relative;
+    @include vp-767 {
+      z-index: 1;
+    }
+  }
+
+  &__button:not(:last-child) {
+    margin-right: 14px;
+
+    @include vp-767 {
+      margin-right: 17px;
+    }
+  }
+
+  &__button.btn--to-the-left {
+    margin-right: auto;
+
+    @include vp-767 {
+      margin-right: auto;
+    }
+  }
+
+  &--large {
+    max-width: 1100px;
+
+    .form__block {
+      grid-template-columns: 1fr 520px;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      @include vp-767 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form__block--team {
+      grid-template-columns: 100px 1fr;
+
+      @include vp-1023 {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .form__description {
+        min-width: 100px;
+      }
+
+      .form__content {
+        display: flex;
+        justify-content: flex-end;
+        margin: -10px -23px 0 0;
+        overflow: auto;
+
+        @include vp-1023 {
+          margin: 0;
+          justify-content: flex-start;
+        }
+
+        @include vp-767 {
+          margin-top: -17px;
+        }
+      }
+    }
+
+    .form__block--invite {
+      grid-template-columns: 1fr 613px;
+
+      @include vp-1023 {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      @include vp-767 {
+        .custom-input-list {
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+
+  &--small {
+    max-width: 740px;
+
+    .form__block {
+      grid-template-columns: 1fr 375px;
+
+      @include vp-1023 {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      @include vp-767 {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__block--skill-set {
+
+    grid-template-columns: 1fr 588px;
+
+    .form__description {
+      max-width: 200px;
+      min-width: unset;
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
+
+    .custom-select {
+      margin-bottom: 18px;
+
+      @include vp-767 {
+        max-width: calc(100vw - 52px);
+      }
+    }
+  }
+
+  .messages-block {
+    display: flex;
+    justify-content: end;
+
+    &.is-success {
+      color: #27AE60;
+    }
+
+    &.is-error {
+      color: #B40008;
+    }
+  }
+}

@@ -1,0 +1,487 @@
+.details {
+  display: flex;
+
+  @include vp-767 {
+    padding-top: 15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__main {
+    width: 100%;
+    margin-right: 31px;
+
+    @include vp-767 {
+      margin-right: 0;
+    }
+  }
+
+  &__side-bar {
+    max-width: 354px;
+    width: 100%;
+
+    @media (max-width: 1074px) {
+      max-width: 274px;
+    }
+
+    @include vp-1023 {
+      display: none;
+      max-width: 354px;
+      margin: 0 auto;
+    }
+  }
+
+  &__section {
+    background-color: $color-default-white;
+    box-shadow: 0 4px 42px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    margin-bottom: 23px;
+
+    @include vp-767 {
+      margin-bottom: 14px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    &--card {
+      article:not(:first-of-type) {
+        display: none;
+      }
+
+      @include vp-767 {
+        display: flex;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: $color-transparent;
+        box-shadow: 0 4px 42px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+
+
+        article {
+          flex-shrink: 0;
+          margin-left: 10px;
+          box-shadow: 0 4px 42px rgba(0, 0, 0, 0.07);
+        }
+
+        article:not(:first-of-type) {
+          display: flex;
+        }
+      }
+    }
+
+    &--about {
+      padding: 30px 30px 16px;
+
+      @include vp-767 {
+        padding: 17px 18px 4px 18px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &--skills {
+      padding: 31px 14px 12px;
+
+      @include vp-767 {
+        padding: 19px 0 0;
+        margin-bottom: 19px;
+      }
+
+      .details__title {
+        margin-left: 16px;
+      }
+
+      .details__field:not(:last-child) {
+        margin-bottom: 20px;
+
+        @include vp-767 {
+          margin-bottom: 7px;
+        }
+      }
+    }
+
+    &--recent-projects {
+      padding: 33px 115px 25px 18px;
+
+      .details__title {
+        margin-bottom: 14px;
+        margin-left: 11px;
+      }
+
+      @include vp-767 {
+        padding-top: 19px;
+        padding-left: 8px;
+        padding-right: 17px;
+      }
+    }
+
+    &--contacts {
+      min-height: 263px;
+      padding: 29px 30px 20px 23px;
+
+      @include vp-767 {
+        padding: 29px 8px 22px 10px;
+      }
+    }
+
+    &--notes {
+      padding: 31px 29px 27px 29px;
+
+      .details__title {
+        margin-bottom: 14px;
+      }
+    }
+
+    &--about-company {
+      padding: 31px 30px 27px;
+
+      @include vp-767 {
+        padding: 17px 18px;
+      }
+    }
+
+    &--team {
+      padding: 31px 30px 29px;
+
+      @include vp-767 {
+        padding: 17px 18px;
+      }
+
+      .details__title {
+        margin-bottom: 2px;
+      }
+
+      .details__plain-text {
+        max-width: 690px;
+      }
+    }
+  }
+
+  &__category {
+    margin-top: 10px;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: $color-night-rider;
+
+    @include vp-767 {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+    color: $color-silver3;
+  }
+
+  &__plain-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 193%;
+    letter-spacing: 0.03em;
+    color: $color-night-rider;
+  }
+
+  &__project {
+    position: relative;
+
+    padding-left: 10px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 24px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+
+      height: 100%;
+      width: 2px;
+      background-color: $color-lavender;
+      border-radius: 5px;
+    }
+
+    @include vp-767 {
+      padding-left: 9px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+
+    }
+  }
+
+  &__top-wrapper {
+    display: flex;
+    margin-bottom: 10px;
+
+    @include vp-767 {
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 0.03em;
+
+      @include vp-767 {
+        display: inline-block;
+
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__experience {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    color: $color-silver3;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    margin-left: 3px;
+  }
+
+  &__description-group {
+    &:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+
+    @include vp-767 {
+      &:not(:last-of-type) {
+        margin-bottom: 11px;
+      }
+    }
+  }
+
+  &__description-title {
+    color: $color-silver3;
+    margin-bottom: -2px;
+  }
+
+  &__description-text {
+    margin: 0;
+  }
+
+  &__contacts-btn {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    color: $color-dim-gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    margin-bottom: 10px;
+
+    &.is-active {
+      color: $color-neon-blue;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__contacts-list {
+    margin: 0 0 23px 0;
+    padding: 0 75px 0 7px;
+    list-style: none;
+    margin-left: 10px;
+
+    &--links {
+      padding-right: 39px;
+
+      @include vp-1023 {
+        padding-right: 6px;
+      }
+    }
+
+    &--subscribed {
+      padding-right: 0;
+    }
+  }
+
+  &__value {
+    margin-left: 10px;
+  }
+
+  &__contacts-item {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-of-type) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__contacts-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+  }
+
+  &__contacts-link {
+    color: $color-neon-blue;
+    max-width: 196px;
+    width: 100%;
+    word-break: break-all;
+    margin-left: 10px;
+  }
+
+  &__subscribe {
+    font-weight: 600;
+    padding-top: 16px;
+    border-top: 1px solid #D9D9D9;
+    text-align: center;
+    margin: 0 auto;
+    letter-spacing: 0.03em;
+
+    width: 100%;
+    margin-left: 4px;
+  }
+
+  &__link-text {
+    display: flex;
+
+    font-weight: 600;
+    color: $color-neon-blue;
+    letter-spacing: 0.03em;
+
+    &:first-of-type {
+      margin-top: 10px;
+    }
+  }
+
+  &__contacts-item--sub {
+    &:not(:last-of-type) {
+      margin-bottom: -3px;
+    }
+  }
+
+  &__contacts-icon {
+    margin-right: 16px;
+  }
+
+  &__contacts-arrow {
+    margin-left: 6px;
+  }
+
+  &__contacts-list--links-sub {
+    margin-bottom: 0;
+  }
+
+  &__buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    padding: 8px 30px 7px;
+    padding-left: calc(189px + 30px);
+    background-color: #fff;
+    -webkit-filter: drop-shadow(0 4px 42px rgba(0,0,0,.07));
+    filter: drop-shadow(0 4px 42px rgba(0,0,0,.07));
+
+    @include vp-767 {
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    &--with-margin {
+      margin-left: 14px;
+    }
+
+    &:nth-child(-n + 2) {
+      @include vp-1023 {
+        .btn__text {
+          display: none;
+        }
+
+        .btn__icon {
+          margin: 0;
+        }
+      }
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    &:nth-last-child(-n + 3) {
+      min-width: 110px;
+      padding-left: 18px;
+      padding-right: 18px;
+
+      @include vp-767 {
+        min-width: 66px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    &:nth-child(3) {
+      @include vp-767 {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      @include vp-767 {
+        position: relative;
+        margin-left: 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -10px;
+          display: block;
+          width: 1px;
+          height: 32px;
+          background-color: $color-silver3;
+        }
+      }
+    }
+  }
+
+  .custom-textarea {
+    margin-top: 3px;
+
+    label textarea {
+      min-height: 127px;
+    }
+  }
+
+  &__btn-textarea {
+    background: $color-night-rider;
+    color: $color-default-white;
+  }
+
+  &--vacancy {
+    padding-top: 20px;
+  }
+}

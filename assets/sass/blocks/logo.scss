@@ -1,0 +1,11 @@
+.logo {
+  fill: $color-neon-blue;
+
+  &--two-lines {
+    fill: $color-eclipse2;
+  }
+
+  &--white {
+    fill: $color-default-white;
+  }
+}

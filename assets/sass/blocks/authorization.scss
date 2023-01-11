@@ -1,0 +1,22 @@
+.authorization {
+  &__wrapper {
+    position: relative;
+    min-height: calc(100vh);
+    min-height: calc(100 * var(--vh, 1vh));
+    display: flex;
+    justify-content: center;
+
+    @include vp-1023 {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__intro {
+    order: 1;
+
+    @include vp-1023 {
+      order: 0;
+    }
+  }
+}

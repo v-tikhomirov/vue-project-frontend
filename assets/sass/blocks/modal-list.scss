@@ -1,0 +1,93 @@
+.modal-list {
+  &__form {
+    margin-bottom: 10px;
+  }
+
+  &__group {
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-width: 268px;
+    // max-width: 84vw;
+    max-height: 64vh;
+    /* stylelint-disable-next-line */
+    max-height: calc(64 * var(--vh, 1vh));
+    padding-left: 16px;
+    overflow-y: scroll;
+
+    // scrollbar
+    /* для Firefox */
+    scrollbar-width: auto;
+    scrollbar-color: #b9b9ff #e7e7fd;
+
+    /* для Chrome/Edge/Safari */
+    &::-webkit-scrollbar {
+      height: 5px;
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #e7e7fd;
+      border-radius: 11px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #b9b9ff;
+      border-radius: 11px;
+    }
+
+    // @include vp-767 {
+    //   max-width: 84vw;
+    // }
+
+    label {
+      position: relative;
+      margin: 7px 0;
+      padding-left: 34px;
+      padding-right: 15px;
+      cursor: pointer;
+    }
+
+    .modal-list__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 22px;
+      height: 22px;
+      transition: opacity $trans-default;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      &--checked {
+        opacity: 0;
+      }
+    }
+
+    input:checked ~ .modal-list__icon {
+      opacity: 0;
+    }
+
+    input:checked ~ .modal-list__icon--checked {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    margin: 0 0 8px 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: 0.03em;
+    color: $color-night-rider;
+  }
+}

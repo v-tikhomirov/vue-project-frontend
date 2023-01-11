@@ -1,0 +1,53 @@
+.kanban {
+  &__items {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 100%;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 20%;
+    vertical-align: text-top;
+    margin: 0 5px;
+  }
+
+  &__column {
+    background-color: #eaefef;
+    padding: 4px 10px;
+    border-radius: 6px;
+
+    .v-card.completed {
+      background-color: #d4f8d4;
+    }
+  }
+}
+
+.height-100 {
+  height: 100%;
+}
+.balance {
+  padding: 6px;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+}
+
+.skills-page {
+  &__right-block {
+    border-left: 1px solid #e0e0e0;
+    padding-left: 50px !important;
+  }
+}
+
+.stepper-journey {
+    overflow: scroll !important;
+}
+.archive__item {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+

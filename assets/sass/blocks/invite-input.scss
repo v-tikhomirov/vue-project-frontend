@@ -1,0 +1,10 @@
+.invite-input {
+  position: relative;
+  display: flex;
+
+  &__success {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,247 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  max-width: 189px;
+  width: 100%;
+  max-height: calc(100vh);
+  max-height: calc(100 * var(--vh, 1vh));
+  height: 100%;
+  padding: 25px 0 24px 0;
+  overflow: auto;
+
+  color: $color-default-white;
+
+  background-color: $color-neon-blue;
+  z-index: 1;
+
+  @include vp-767 {
+    padding: 13px;
+  }
+
+  @include vp-767 {
+    display: none;
+    max-width: unset;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__top-wrapper {
+    @include vp-767 {
+      display: flex;
+      margin-bottom: 23px;
+
+      .btn {
+        color: $color-default-white;
+      }
+    }
+  }
+
+  &__notifications {
+    display: none;
+    margin-right: 25px;
+    margin-top: 0;
+
+    .btn {
+      width: 18px;
+      height: 20px;
+      padding: 0;
+    }
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__mobile-close{
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      width: 12px;
+      height: 12px;
+      padding: 0;
+      margin-top: 5px;
+
+      .btn__icon {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__links {
+    margin: 0 0 auto 0;
+
+    @include vp-767 {
+      padding-top: 22px;
+      padding-left: 8px;
+      padding-bottom: 21px;
+      margin: 0;
+      border-bottom: 1px solid rgba($color-default-white, 0.5);
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: max-content;
+    margin: 0 auto 45px auto;
+
+    @include vp-767 {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__logo-full {
+    display: block;
+
+    @include vp-767 {
+      width: 109px;
+      height: 19px;
+    }
+  }
+
+  &__logo-collapsed {
+    display: none;
+  }
+
+  &__user {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+      border-bottom: 1px solid rgba($color-default-white, 0.5);
+      padding-bottom: 29px;
+    }
+  }
+
+  &__user-pic {
+    margin-right: 16px;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__user-data {
+    margin-top: 5px;
+  }
+
+  &__user-name {
+    margin: 0 0 3px 0;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  &__user-balance {
+    margin: 0;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  &__balance  {
+    font-weight: 700;
+    margin-left: 2px;
+  }
+
+  &__settings-wrapper {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      margin-bottom: auto;
+    }
+  }
+
+  &__settings-links {
+    list-style: none;
+    padding: 17px 0 0 4px;
+    margin: 0;
+  }
+
+  &__settings-link {
+    &:not(:last-of-type) {
+      margin-bottom: 19px;
+    }
+
+    .link {
+      display: flex;
+    }
+  }
+
+  &__link-icon {
+    margin-right: 10px;
+  }
+
+  &__bottom-links {
+    padding: 0 0 0 25px;
+  }
+
+  &__toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    width: 7px;
+    height: 23px;
+    padding: 0;
+
+    background-color: rgba($color-default-white, 0.1);
+    border: none;
+    border-radius: 5px 0 0 5px;
+
+    cursor: pointer;
+
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  .agreements-list {
+    padding-left: 24px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 20px;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+
+      @include vp-767 {
+        margin-right: 22px;
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @include vp-767 {
+      display: flex;
+      padding: 0;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+}

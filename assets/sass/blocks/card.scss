@@ -1,0 +1,307 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 298px;
+  min-height: 192px;
+  padding: 15px 18px;
+
+  background-color: $color-default-white;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0px 0px 12px 0px #0000001F;
+    cursor: pointer;
+  }
+
+  &--empty {
+    justify-content: center;
+    align-items: center;
+    color: $color-dim-gray;
+    border: 1.5px dashed $color-gainsboro;
+    background-color: transparent;
+
+    button {
+      font-size: 12px;
+      line-height: 117%;
+      letter-spacing: 0.03em;
+      background-color: transparent;
+    }
+
+    svg {
+      fill: $color-dim-gray;
+    }
+  }
+
+  &--total {
+    filter: drop-shadow(0 4px 42px rgba(0, 0, 0, 0.07));
+
+    .card__header {
+      align-items: baseline;
+      margin-bottom: 11px;
+    }
+
+    .card__job-conditions p, .card__user-skills p {
+      margin-bottom: 6px;
+    }
+  }
+
+  &--personal,
+  &--vacancy {
+    min-height: 231px;
+    padding: 20px 18px 13px;
+
+    .card__header {
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 34px;
+      margin-bottom: 8px;
+    }
+
+    .card__job-conditions .card__label {
+      width: 36%;
+    }
+  }
+
+  &--vacancy {
+    .card__title,
+    .card__company-name,
+    .card__experience,
+    .card__salary,
+    .card__languages,
+    .card__frameworks {
+      color: $color-black;
+    }
+
+    .card__job-conditions,
+    .card__user-skills {
+      .card__label {
+        width: 26%;
+      }
+
+      .card__languages,
+      .card__frameworks {
+        width: 70%;
+      }
+    }
+  }
+
+  &--opened::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 81%;
+    background-color: $color-neon-blue;
+    clip-path: path("M0 0C1.10457 0 2 0.895431 2 2V185C2 186.105 1.10457 187 0 187V0Z");
+  }
+}
+
+.card__header {
+  display: flex;
+  margin-bottom: 10px;
+  color: $color-night-rider;
+  font-family: $ff-redhatdisplay;
+}
+
+.card__header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  margin: 0;
+  margin-right: 7px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+}
+
+.card__total-found {
+  margin: 0;
+  padding: 3px 8px 1px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  background: $color-lavender;
+  border-radius: 17px;
+}
+
+.card__time-found {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: $color-silver3;
+}
+
+.card__userpic {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: $color-gainsboro;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card__user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card__user-name,
+.card__company-name {
+  max-width: 170px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: $color-night-rider;
+}
+
+.card__match {
+  flex-shrink: 0;
+  max-width: 70px;
+  margin: 0;
+  margin-left: auto;
+  padding: 2px 6px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: $color-default-white;
+  border-radius: 17px;
+
+  &--green {
+    background-color: $color-eucalyptus;
+  }
+
+  &--yellow {
+    background-color: $color-festival;
+  }
+
+  &--red {
+    background-color: $color-flamingo;
+  }
+}
+
+.card__job-conditions,
+.card__user-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  border-bottom: 1px solid $color-gainsboro;
+
+  p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: $color-night-rider;
+  }
+}
+
+.card__job-conditions {
+  margin-bottom: 10px;
+
+  .card__label {
+    width: 27%;
+    margin-right: 5px;
+    color: $color-silver3;
+  }
+
+  .card__experience,
+  .card__salary {
+    width: 20%;
+    margin-right: 5px;
+
+    font-weight: 500;
+  }
+
+  .card__location,
+  .card__workplace {
+    max-width: 45%;
+    margin-left: auto;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  svg {
+    position: relative;
+    top: 2px;
+    margin-right: 7px;
+    fill: $color-night-rider;
+  }
+}
+
+.card__user-skills {
+  border: none;
+
+  .card__label {
+    width: 26%;
+    margin-right: 5px;
+    color: $color-silver3;
+  }
+
+  .card__languages,
+  .card__frameworks {
+    font-weight: 500;
+    width: 72%;
+  }
+
+  span {
+    position: relative;
+    top: -3px;
+    left: 4px;
+    padding: 0 4px;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 137%;
+    letter-spacing: 0.03em;
+    color: $color-silver3;
+    background: #f0f0f0;
+    border-radius: 10px;
+  }
+}
+
+.card__buttons {
+  display: flex;
+  margin-top: auto;
+
+  & > :not(:last-child) {
+    margin-right: 24px;
+  }
+
+  & > :last-child {
+    margin-left: auto;
+  }
+
+  .btn {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        opacity: 0.6;
+      }
+    }
+  }
+}

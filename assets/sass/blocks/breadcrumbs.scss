@@ -1,0 +1,57 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  font-family: $ff-redhatdisplay;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+
+  color: $color-light-gray;
+
+  &__item:last-child &__slash {
+    display: none;
+  }
+
+  &.breadcrumbs--one-item {
+    .breadcrumbs__slash {
+      display: inline-flex;
+    }
+
+    .breadcrumbs__item:last-child {
+      .breadcrumbs__link {
+        color: $color-light-gray;
+      }
+    }
+
+    .breadcrumbs__link {
+      pointer-events: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__slash {
+    margin: 0 3px;
+  }
+
+  &__link {
+    color: $color-light-gray;
+  }
+
+  &__item:last-child &__link {
+    pointer-events: none;
+    color: $color-night-rider;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

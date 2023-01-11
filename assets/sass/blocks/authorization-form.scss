@@ -1,0 +1,516 @@
+.authorization-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 447px;
+  margin: 0 auto;
+  padding: 25px 36px 30px;
+  background-color: $color-default-white;
+  box-shadow: 0 4px 42px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  z-index: 10;
+
+  @include vp-1023 {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    padding: 0 0 24px;
+    max-width: unset;
+    box-shadow: none;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &--complete {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 5px;
+
+    @include vp-1023 {
+      position: relative;
+      transform: none;
+      top: 0;
+      left: 0;
+      padding-top: 0;
+    }
+
+    .authorization-form__heading {
+      margin-bottom: 10px;
+
+      @include vp-1023 {
+        margin-bottom: 0;
+
+        .btn {
+          position: static;
+        }
+      }
+    }
+  }
+
+  .custom-input {
+    width: 100%;
+    padding: 0;
+  }
+
+  .agreements-list {
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+    color: $color-dim-gray;
+
+    @include vp-1023 {
+      padding: 0 14px;
+    }
+
+    &--sign-up {
+      display: none;
+
+      @include vp-1023 {
+        display: flex;
+      }
+    }
+  }
+
+  .form {
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 0 4px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+
+    @include vp-1023 {
+      margin-top: 0;
+      margin-bottom: 0;
+      // padding-left: 0;
+    }
+
+    form {
+      display: block;
+      min-height: unset;
+      position: relative;
+    }
+
+    .custom-input {
+      &:not(:last-of-type) {
+        margin-bottom: 18px;
+      }
+
+      @include vp-1023 {
+        &:not(:last-of-type) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .custom-toggle {
+      width: fit-content;
+
+      label {
+        padding-left: 32px;
+      }
+
+      .custom-toggle__label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .custom-toggle__icon {
+        @include vp-1023 {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .btn {
+      @include vp-1023 {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        background-color: $color-neon-blue;
+        border-radius: 8px;
+        min-height: 43px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: auto;
+    padding: 0;
+
+    .title {
+      margin: 0 0 1px 0;
+    }
+
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+
+  &__welcome-wrapper {
+    margin-top: 22px;
+
+    .btn {
+      border-color: $color-transparent;
+    }
+
+    .btn[data-pressed] {
+      color: $color-neon-blue;
+      border: 1px solid $color-neon-blue;
+      box-shadow: 0 0 8px rgba(93, 95, 239, 0.9);
+    }
+
+    @include vp-1023 {
+      display: none;
+      position: relative;
+      margin-top: 0;
+      padding: 0 10px 16px 10px;
+
+      .title {
+        position: relative;
+        z-index: 1;
+
+        color: $color-default-white;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      .authorization-form__subtitle {
+        position: relative;
+        z-index: 1;
+
+        color: $color-default-white;
+        margin-bottom: 13px;
+
+        @include vp-1023 {
+          display: none;
+        }
+      }
+
+      .btn {
+        color: $color-night-rider;
+        font-size: 14px;
+        line-height: 19px;
+        border: none;
+        background-color: $color-default-white;
+        filter: drop-shadow(0 4px 42px rgba(0, 0, 0, 0.07));
+      }
+
+      .authorization-form__flex-wrapper {
+        position: absolute;
+        top: -90px;
+        left: 0;
+        z-index: 1;
+
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+        border: none;
+
+        .btn {
+          position: relative;
+          top: 0;
+          left: 0;
+          max-width: unset;
+          color: $color-night-rider;
+          border-radius: 8px;
+        }
+
+        .btn[data-pressed] {
+          color: $color-night-rider;
+          border-color: $color-transparent;
+          box-shadow: none;
+        }
+
+        @include vp-1023 {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 16px 2px;
+
+    line-height: 20px;
+  }
+
+  &__flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 19px 0;
+
+    &--underline {
+      padding-bottom: 31px;
+      border-bottom: 0.5px solid $color-dim-gray;
+    }
+
+    &--form {
+      margin: 25px 0 22px;
+
+      @include vp-1023 {
+        margin-top: 14px;
+        margin-bottom: 12px;
+      }
+
+      .custom-toggle {
+        margin-top: -1px;
+      }
+
+      .authorization-form__reset-password {
+        margin-top: 2px;
+      }
+    }
+
+    .btn {
+      width: 48%;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    margin: 16px 0 0 0;
+
+    .btn {
+      padding: 0;
+      margin: -8px 13px 0 0;
+
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.04em;
+      color: $color-dim-gray;
+
+      transition: background-color $trans-default;
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .btn__icon {
+      margin: 0 4px 0 0;
+      flex-shrink: 0;
+    }
+
+    .title {
+      margin: 9px 0 16px 0;
+    }
+
+    &--complete {
+      margin: 24px 0 0 0;
+
+      .btn {
+        margin: -15px 13px 0 0;
+      }
+
+      .title {
+        margin: 0 0 16px 0;
+      }
+
+      @include vp-1023 {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  &__error-message {
+    display: none;
+    font-weight: 600;
+    margin: 0;
+    color: $color-flamingo;
+  }
+
+  &__form {
+    .title {
+      margin-bottom: 16px;
+
+      @include vp-1023 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .custom-input {
+      margin-bottom: 17px;
+
+      &--last {
+        margin-bottom: 25px;
+      }
+    }
+
+    .custom-toggle {
+      padding: 0;
+    }
+
+    @include vp-1023 {
+      padding-top: 23px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__reset-password {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 20px;
+    color: $color-neon-blue;
+  }
+
+  &__checkbox {
+    margin-bottom: 22px;
+
+    @include vp-1023 {
+      margin-top: 10px;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 22px;
+
+    .text {
+      margin: 0;
+
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .social {
+      margin-top: -5px;
+    }
+
+    .social__item {
+      width: 37px;
+      height: 37px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    .social__link svg {
+      width: 37px;
+      height: 37px;
+    }
+
+    @include vp-1023 {
+      margin-top: 26px;
+    }
+  }
+
+  &__log-in {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    padding-top: 14px;
+    border-top: 0.5px solid $color-dim-gray;
+
+    .text {
+      margin-top: 11px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: $color-night-rider;
+
+      @include vp-1023 {
+        margin-bottom: 15px;
+        font-size: 22px;
+        line-height: 29px;
+      }
+    }
+
+    a.btn.btn--long {
+      padding-left: 9px;
+
+      font-weight: 700;
+      color: $color-neon-blue;
+      border-color: $color-neon-blue;
+
+      @include vp-1023 {
+        color: $color-neon-blue;
+        border: 1px solid $color-neon-blue;
+        background-color: $color-transparent;
+      }
+    }
+
+    @include vp-1023 {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      padding-top: 15px;
+    }
+  }
+
+  &__sign-up {
+    margin-top: 25px;
+    padding-top: 22px;
+    border-top: 0.5px solid $color-dim-gray;
+
+    .text {
+      margin-top: 11px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      letter-spacing: 0.03em;
+      color: $color-night-rider;
+    }
+
+    a.link {
+      padding-left: 9px;
+
+      font-weight: 700;
+      color: $color-neon-blue;
+
+      @include vp-1023 {
+        color: $color-neon-blue;
+        background-color: $color-transparent;
+      }
+    }
+
+    @include vp-1023 {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__success {
+    @include vp-1023 {
+      padding: 0 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__success-icon {
+    margin-bottom: 5px;
+  }
+
+  &__success-text {
+    .text {
+      margin: 0;
+
+      line-height: 20px;
+
+      :not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

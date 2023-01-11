@@ -1,0 +1,245 @@
+.custom-input-list {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 20px;
+
+  @include vp-767 {
+    margin: 0 2px;
+  }
+
+  &.is-sent {
+    .custom-input-list__success {
+      opacity: 1;
+    }
+  }
+
+  &.is-valid {
+    .custom-input-list__invite-btn {
+      background-color: $color-neon-blue;
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:active,
+        &:focus,
+        &:hover {
+          background-color: $color-free-speech-blue;
+        }
+      }
+    }
+  }
+
+  &.is-invalid .custom-input-list__controls {
+    border: 1px solid $color-flamingo;
+    box-shadow: none;
+  }
+}
+
+.custom-input-list__label {
+  position: relative;
+  margin-bottom: 6px;
+
+  font-family: $ff-redhatdisplay;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.03em;
+  color: $color-night-rider;
+}
+
+.custom-input-list__controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  padding-right: 88px;
+
+  background-color: $color-transparent;
+  border: 1px solid $color-silver3;
+  border-radius: 8px;
+
+  transition: border $trans-default, box-shadow $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      border: 1px solid $color-neon-blue;
+    }
+
+    &:focus-within {
+      border: 1px solid $color-neon-blue;
+      box-shadow: 0 0 4px $color-neon-blue;
+    }
+  }
+
+  label {
+    position: relative;
+    flex-grow: 1;
+    min-width: 50%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    color: $color-night-rider;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      letter-spacing: 0.03em;
+      color: $color-silver3;
+      user-select: none;
+    }
+
+    @include vp-767 {
+      padding-left: 14px;
+      font-size: 18px;
+    }
+  }
+
+  .custom-input-list__invite-btn {
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 88px;
+    height: calc(100% + 2px);
+    font-weight: 600;
+    background: $color-silver3;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    transition: opacity $trans-default, background-color $trans-default;
+
+    @include vp-767 {
+      width: 75px;
+
+      .btn__icon {
+        margin-left: 7px;
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: $color-silver3;
+      }
+    }
+  }
+}
+
+.custom-input-list__inner {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+
+  overflow: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}
+
+.custom-input-list__list {
+  position: relative;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  margin-right: 12px;
+  padding: 0;
+  list-style-type: none;
+  border: none;
+
+  @include vp-767 {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  &.lg-only {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &.sm-only {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+    }
+  }
+}
+
+.custom-input-list__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 8px 0 8px 8px;
+  padding: 3px 7px;
+  color: $color-default-white;
+  background-color: #575757;
+  border-radius: 8px;
+  outline: none;
+
+  p {
+    margin: 0;
+  }
+
+  @include vp-767 {
+    margin-right: 8px;
+    margin-left: 0;
+    margin-top: 0;
+    padding-right: 3px;
+  }
+}
+
+.custom-input-list__remove-btn {
+  margin-left: 5px;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  color: $color-default-white;
+  background-color: $color-transparent;
+  transition: opacity $trans-default, color $trans-default, background-color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      background-color: $color-eclipse;
+    }
+  }
+}
+
+.custom-input-list__success {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+
+  font-family: $ff-redhatdisplay;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 200%;
+  text-align: right;
+  letter-spacing: 0.03em;
+  color: #5bb282;
+
+  opacity: 0;
+  transition: opacity $trans-default;
+}
